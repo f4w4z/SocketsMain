@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap');
+
+/* Cute Notepad Styles */
+
+body {
+  background: #181926;
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  display: block;
+}
+
+.notepad-container {
+  background: #232336;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: none;
+  transition: none;
+}
+
+.separator {
+  width: 100%;
+  border: none;
+  height: 1px; background: #39395a; border: none;
+  margin: 0 0 0 0;
+}
+
+.cute-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 0 0 12px 0;
+  padding: 28px 32px 12px 32px;
+  background: transparent;
+  min-height: 64px;
+}
+
+.cute-header h1, .cute-title-display {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #e1e6fc;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.18s, background 0.18s;
+  cursor: pointer;
+  display: block;
+  padding: 2px 12px;
+  border-radius: 0;
+  text-align: center;
+}
+
+.cute-header h1, .cute-title-display span {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #e1e6fc;
+  margin: 0 0 0 6px;
+  letter-spacing: 1px;
+  
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.18s, background 0.18s;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 0;
+}
+
+.cute-header h1, .cute-title-display span code {
+  background: none;
+  border-radius: 0;
+  padding: 2px 7px;
+  font-size: 0.98em;
+  color: #e1e6fc;
+  border: none;
+}
+
+.cute-header h1, .cute-title-display span button {
+  margin-left: 8px;
+  padding: 4px 18px;
+  border-radius: 22px;
+  border: none;
+  background: #a084e8;
+  color: #232336;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  
+  transition: background 0.18s;
+}
+
+.cute-title-edit {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #e1e6fc;
+  background: #232336;
+  border: none;
+  border-radius: 0;
+  padding: 2px 12px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 400px;
+  outline: none;
+  
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  transition: border 0.18s, box-shadow 0.18s, background 0.18s;
+  display: block;
+}
+
+.cute-title-edit:focus {
+  border: none;
+  background: #232336;
+  
+}
+
+.cute-textarea {
+  width: 100%;
+  min-height: 180px;
+  max-width: 100%;
+  padding: 22px 18px 18px 18px;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  font-size: 1.13rem;
+  color: #e1e6fc;
+  resize: vertical;
+  box-shadow: none;
+  margin-bottom: 0;
+  outline: none;
+  transition: box-shadow 0.22s, background 0.18s;
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.cute-textarea:focus {
+  background: #232336;
+  
+}
+
+.cute-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  color: #bcbcd6;
+  font-size: 0.93rem;
+  font-weight: 400;
+  margin: 14px 0 0 0;
+  opacity: 0.85;
+  user-select: none;
+  text-shadow: none;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* --- ADMIN DASHBOARD MOBILE STYLES --- */
+@media (max-width: 700px) {
+  .mobile-room-selector-overlay button,
+  .mobile-room-list-item button {
+    border-radius: 0 !important;
+    padding: 7px 12px !important;
+    background: #ff4f4f !important;
+    color: #fff !important;
+    font-size: 1.25rem !important;
+    min-width: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .mobile-room-selector-overlay button[aria-label="Back to Rooms"] {
+    background: #232336 !important;
+    color: #a084e8 !important;
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 18px !important;
+    margin-top: 2px !important;
+    align-self: flex-start !important;
+    box-shadow: 0 1px 10px #0002 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  html, body, #root {
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    min-height: 100vh !important;
+    height: 100vh !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .admin-dashboard-root {
+    flex-direction: column !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  .admin-sidebar {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    border-right: none !important;
+    border-bottom: 1px solid #39395a !important;
+    padding: 12px 0 !important;
+    min-height: unset !important;
+    max-height: 35vh !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+  }
+  .admin-content {
+    flex: 1 !important;
+    padding: 10px 2vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+  }
+  .admin-room-list-item {
+    padding: 8px 7px !important;
+    font-size: 1rem !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+  }
+  .admin-room-list-item .room-title {
+    font-size: 1.03rem !important;
+  }
+  .admin-room-list-item .room-id {
+    font-size: 0.93rem !important;
+    word-break: break-all !important;
+  }
+  .admin-content > div {
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  button {
+    font-size: 1rem !important;
+    padding: 10px 0 !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

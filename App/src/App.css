@@ -1,0 +1,191 @@
+/* Cute Notepad Styles */
+
+body {
+  background: #181926;
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  display: block;
+}
+
+.notepad-container {
+  background: #232336;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: none;
+  transition: none;
+}
+
+.separator {
+  width: 100%;
+  border: none;
+  height: 1px; background: #39395a; border: none;
+  margin: 0 0 0 0;
+}
+
+.cute-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 0 0 12px 0;
+  padding: 28px 32px 12px 32px;
+  background: transparent;
+  min-height: 64px;
+}
+
+.cute-header h1, .cute-title-display {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #e1e6fc;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.18s, background 0.18s;
+  cursor: pointer;
+  display: block;
+  padding: 2px 12px;
+  border-radius: 0;
+  text-align: center;
+}
+
+.cute-header h1, .cute-title-display span {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #e1e6fc;
+  margin: 0 0 0 6px;
+  letter-spacing: 1px;
+  
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.18s, background 0.18s;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 0;
+}
+
+.cute-header h1, .cute-title-display span code {
+  background: none;
+  border-radius: 0;
+  padding: 2px 7px;
+  font-size: 0.98em;
+  color: #e1e6fc;
+  border: none;
+}
+
+.cute-header h1, .cute-title-display span button {
+  margin-left: 8px;
+  padding: 4px 18px;
+  border-radius: 22px;
+  border: none;
+  background: #a084e8;
+  color: #232336;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  
+  transition: background 0.18s;
+}
+
+.cute-title-edit {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #e1e6fc;
+  background: #232336;
+  border: none;
+  border-radius: 0;
+  padding: 2px 12px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 400px;
+  outline: none;
+  
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  transition: border 0.18s, box-shadow 0.18s, background 0.18s;
+  display: block;
+}
+
+.cute-title-edit:focus {
+  border: none;
+  background: #232336;
+  
+}
+
+.cute-textarea {
+  width: 100%;
+  min-height: 180px;
+  max-width: 100%;
+  padding: 22px 18px 18px 18px;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  font-size: 1.13rem;
+  color: #e1e6fc;
+  resize: vertical;
+  box-shadow: none;
+  margin-bottom: 0;
+  outline: none;
+  transition: box-shadow 0.22s, background 0.18s;
+  font-family: 'Space Grotesk', Inter, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.cute-textarea:focus {
+  background: #232336;
+  
+}
+
+.cute-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  color: #bcbcd6;
+  font-size: 0.93rem;
+  font-weight: 400;
+  margin: 14px 0 0 0;
+  opacity: 0.85;
+  user-select: none;
+  text-shadow: none;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
