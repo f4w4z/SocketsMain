@@ -334,17 +334,20 @@ function App() {
               const upload = async () => {
                 setImageUploading(true);
                 try {
-                  const { ref: storageRef, uploadBytes, getDownloadURL } = await import('firebase/storage');
-                  const storage = await import('firebase/storage').then(module => module.getStorage());
-                  const imagePath = `notepad/${roomId}/images/${Date.now()}_${file.name}`;
-                  const imgRef = storageRef(storage, imagePath);
-                  await uploadBytes(imgRef, file);
-                  const url = await getDownloadURL(imgRef);
-                  // Insert image at current selection
+                  // Insert placeholder image immediately for better UX
+                  const placeholderUrl = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjMyMzM2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ExZTZmYyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIFVwbG9hZGluZy4uLjwvdGV4dD48L3N2Zz4=';
+                  editor?.chain().focus().setImage({ src: placeholderUrl }).run();
+                  
+                  const { uploadImageToR2 } = await import('./utils/r2Upload');
+                  const url = await uploadImageToR2(file, roomId);
+                  
+                  // Replace placeholder with actual image
                   editor?.chain().focus().setImage({ src: url }).run();
                   setStatus('syncing');
                 } catch (err) {
                   alert('Failed to upload image.');
+                  // Remove placeholder on error
+                  editor?.chain().focus().deleteSelection().run();
                 } finally {
                   setImageUploading(false);
                 }

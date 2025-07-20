@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
-import { db, storage } from './firebase';
+import { db } from './firebase';
 import { listSessionIds, fetchAndStitchAudio, groupSessionIdsByDate } from './audioUtils';
 import { ref, onValue, set } from 'firebase/database';
 import { deleteRoomCompletely } from './deleteRoomCompletely';
@@ -340,11 +340,8 @@ const [audioBatchSize, setAudioBatchSize] = useState<number>(10);
             if (file) {
               const upload = async () => {
                 try {
-                  const { ref: storageRef, uploadBytes, getDownloadURL } = await import('firebase/storage');
-                  const imagePath = `notepad/${selectedRoom.id}/images/${Date.now()}_${file.name}`;
-                  const imgRef = storageRef(storage, imagePath);
-                  await uploadBytes(imgRef, file);
-                  const url = await getDownloadURL(imgRef);
+                  const { uploadImageToR2 } = await import('./utils/r2Upload');
+                  const url = await uploadImageToR2(file, selectedRoom.id);
                   editor?.chain().focus().setImage({ src: url }).run();
                 } catch (err) {
                   alert('Failed to upload image.');

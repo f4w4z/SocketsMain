@@ -8,6 +8,7 @@ const R2_SECRET_ACCESS_KEY = import.meta.env.VITE_R2_SECRET_ACCESS_KEY;
 const R2_ENDPOINT = import.meta.env.VITE_R2_ENDPOINT; // e.g. "https://<accountid>.r2.cloudflarestorage.com"
 const R2_REGION = import.meta.env.VITE_R2_REGION || "auto";
 const R2_BUCKET = import.meta.env.VITE_R2_BUCKET;
+const R2_PUBLIC_DOMAIN = import.meta.env.VITE_R2_PUBLIC_DOMAIN; // e.g. "https://pub-abc123.r2.dev" or your custom domain
 
 export const r2Config = {
   region: R2_REGION,
@@ -20,5 +21,6 @@ export const r2Config = {
 };
 
 export const r2Bucket = R2_BUCKET;
+export const r2PublicDomain = R2_PUBLIC_DOMAIN;
 
 export const r2Client = new S3Client(r2Config);

@@ -189,3 +189,78 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+/* Responsive Image Styles - Better Containment */
+.ProseMirror {
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+.ProseMirror img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 8px auto;
+  display: block;
+  object-fit: contain;
+  /* Prevent images from breaking layout */
+  box-sizing: border-box;
+  /* Loading state */
+  background: #232336;
+  transition: opacity 0.3s ease;
+}
+
+/* Image loading state */
+.ProseMirror img[src=""], 
+.ProseMirror img:not([src]) {
+  opacity: 0.5;
+  background: linear-gradient(90deg, #232336 25%, #2a2a3e 50%, #232336 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Mobile optimizations - Stricter containment */
+@media (max-width: 768px) {
+  .ProseMirror {
+    overflow-x: hidden;
+  }
+  
+  .ProseMirror img {
+    max-width: calc(100vw - 40px) !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 4px;
+    margin: 6px auto;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ProseMirror img {
+    max-width: calc(90vw - 40px) !important;
+    height: auto;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .ProseMirror img {
+    max-width: calc(80vw - 80px) !important;
+    height: auto;
+  }
+}
+
+/* Large desktop optimizations */
+@media (min-width: 1440px) {
+  .ProseMirror img {
+    max-width: calc(70vw - 100px) !important;
+    height: auto;
+  }
+}
